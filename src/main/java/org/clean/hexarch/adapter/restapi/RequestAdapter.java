@@ -3,10 +3,10 @@ package org.clean.hexarch.adapter.restapi;
 import java.util.Map;
 
 import org.clean.hexarch.adapter.restapi.data.FlowMessage;
-import org.clean.hexarch.application.RegistrationNotifyEvent;
-import org.clean.hexarch.application.UnknownEvent;
 import org.clean.hexarch.application.AddressBookService;
 import org.clean.hexarch.application.ApplicationEvent;
+import org.clean.hexarch.application.RegistrationNotifyEvent;
+import org.clean.hexarch.application.UnknownEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +36,7 @@ class RequestAdapter {
     try {
       return RequestType.valueOf(message.getMessageType());
     } catch (Exception e) {
-      return null;
+      throw new InternalProcessingException();
     }
   }
 }

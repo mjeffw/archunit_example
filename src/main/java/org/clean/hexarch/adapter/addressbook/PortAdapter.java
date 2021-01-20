@@ -22,21 +22,20 @@ public class PortAdapter implements AddressBookPort {
 
   @Override
   public AddAddressBookResponse add(AddressBook book) {
-    // convert from AddressBook to ManageAddressBook data
-    ManageAddressBook data = toManageAddressBook(book);
-
-    ManageAddressBookResponse rsp = client.sendRequest(data);
-
-    AddAddressBookResponse response = toAddResponse(rsp);
-
-    return response;
+    try {
+      // convert from AddressBook to ManageAddressBook data
+      ManageAddressBook data = toManageAddressBook(book);
+      ManageAddressBookResponse rsp = client.sendRequest(data);
+      AddAddressBookResponse response = toAddResponse(rsp);
+      return response;
+    } catch (Exception e) {
+      throw new AddressServiceException();
+    }
   }
 
   private ManageAddressBook toManageAddressBook(AddressBook book) {
     PortAddressBookExporter exporter = new PortAddressBookExporter();
-
     exporter.export(book);
-
     return exporter.get();
   }
 

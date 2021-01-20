@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-class MpsData {
+class ProfileData {
   private String memberID;
   private String addressBookIndicator;
   private String primaryMemberIndicator;

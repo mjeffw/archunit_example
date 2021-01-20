@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import org.clean.hexarch.application.util.bus.Command;
 import org.clean.hexarch.application.util.bus.Handler;
-import org.clean.hexarch.application.util.bus.HandlerCreationException;
 import org.clean.hexarch.application.util.bus.HandlerRegistry;
 import org.clean.hexarch.application.util.bus.RegistryEntry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,10 @@ class HandlerRegistryImpl implements HandlerRegistry {
   @Qualifier("registrationNotify")
   private RegistryEntry registrationNotifyEntry;
 
+  @Autowired
+  @Qualifier("invalidRequest")
+  private RegistryEntry invalidRequestEntry;
+
   @Override
   public List<RegistryEntry> getAll() {
     return Arrays.asList(registrationNotifyEntry);
@@ -30,10 +33,10 @@ class HandlerRegistryImpl implements HandlerRegistry {
       Optional<RegistryEntry> result = getAll().stream().filter(it -> it.getCommandType() == command.getClass())
           .findFirst();
 
-      // TODO return the "invalid request" handler entry
-      return result.orElse(null).getObject();
+      return result.orElse(invalidRequestEntry).getObject();
     } catch (Exception e) {
-      throw new HandlerCreationException(e);
+      throw new IllegalStateException();
+//      throw new HandlerCreationException(e);
     }
   }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SoapClientImpl implements SoapClient {
   @Override
-  public MpsData retrieveMpsData(String ban) {
+  public ProfileData retrieveProfileData(String ban) {
     // TODO Auto-generated method stub
     return null;
   }

@@ -6,13 +6,18 @@ import org.clean.hexarch.application.domain.model.AddAddressBookResponse;
 import org.clean.hexarch.application.domain.service.port.WorkflowPort;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class WorkflowResponderImpl implements WorkflowPort {
 
   @Override
   public void send(AddAddressBookResponse response, Map<String, Object> context) {
-    // TODO Auto-generated method stub
-
+    try {
+      log.debug(response.toString());
+    } catch (Exception e) {
+      throw new WorkflowCommunicationException();
+    }
   }
-
 }

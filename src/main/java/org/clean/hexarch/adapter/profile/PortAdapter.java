@@ -17,17 +17,19 @@ class PortAdapter implements MpsPort {
 
   @Override
   public AddressBook getAddressBook(Ban ban) {
-    // call MPS and get the MpsData for the BAN
-    MpsData data = client.retrieveMpsData(ban.asStringValue());
+    try {
+      // call MPS and get the MpsData for the BAN
+      ProfileData data = client.retrieveProfileData(ban.asStringValue());
 
-    // convert MpsData to AddressBook
-    AddressBook book = toAddressBook(data);
-
-    // return AddressBook
-    return book;
+      // convert MpsData to AddressBook
+      AddressBook book = toAddressBook(data);
+      return book;
+    } catch (Exception e) {
+      throw new ProfileServiceException();
+    }
   }
 
-  private AddressBook toAddressBook(MpsData data) {
+  private AddressBook toAddressBook(ProfileData data) {
     return new AddressBook();
   }
 }
