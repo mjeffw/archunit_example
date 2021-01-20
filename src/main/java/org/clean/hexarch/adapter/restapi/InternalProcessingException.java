@@ -1,5 +1,7 @@
 package org.clean.hexarch.adapter.restapi;
 
-public class InternalProcessingException extends RuntimeException {
+import org.clean.hexarch.util.exception.ComponentException;
+
+public class InternalProcessingException extends ComponentException {
 
 }

@@ -13,7 +13,11 @@ class CommandBusFactory implements FactoryBean<CommandBus> {
 
   @Override
   public CommandBus getObject() throws Exception {
-    return new SynchronousCommandBus(registry);
+    try {
+      return new SynchronousCommandBus(registry);
+    } catch (Exception e) {
+      throw new IllegalStateException();
+    }
   }
 
   @Override
