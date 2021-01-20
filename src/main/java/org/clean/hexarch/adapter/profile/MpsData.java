@@ -1,4 +1,4 @@
-package org.clean.hexarch.adapter.mps;
+package org.clean.hexarch.adapter.profile;
 
 import lombok.Getter;
 import lombok.Setter;
