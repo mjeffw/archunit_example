@@ -7,7 +7,6 @@ import org.clean.hexarch.application.domain.model.AddAddressBookFailureResponse;
 import org.clean.hexarch.application.domain.model.AddAddressBookResponse;
 import org.clean.hexarch.application.domain.model.AddAddressBookSuccessResponse;
 import org.clean.hexarch.application.domain.model.AddressBook;
-import org.clean.hexarch.application.domain.model.AddressBookExporter;
 import org.clean.hexarch.application.domain.service.port.AddressBookPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,7 +33,7 @@ public class PortAdapter implements AddressBookPort {
   }
 
   private ManageAddressBook toManageAddressBook(AddressBook book) {
-    AddressBookExporter exporter = new PortAddressBookExporter();
+    PortAddressBookExporter exporter = new PortAddressBookExporter();
 
     exporter.export(book);
 

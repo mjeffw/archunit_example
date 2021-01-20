@@ -1,4 +1,4 @@
-package org.clean.hexarch.adapter.worflow;
+package org.clean.hexarch.adapter.workflow;
 
 import java.util.Map;
 

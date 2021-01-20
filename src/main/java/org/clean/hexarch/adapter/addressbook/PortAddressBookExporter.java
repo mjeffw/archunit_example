@@ -26,7 +26,6 @@ class PortAddressBookExporter implements AddressBookExporter {
     manageAddressBook.setRequestVO(requestVO);
   }
 
-  @Override
   public ManageAddressBook get() {
     return manageAddressBook;
   }
