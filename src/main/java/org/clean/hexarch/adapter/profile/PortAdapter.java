@@ -17,8 +17,6 @@ class PortAdapter implements MpsPort {
 
   @Override
   public AddressBook getAddressBook(Ban ban) {
-    // TODO Auto-generated method stub
-
     // call MPS and get the MpsData for the BAN
     MpsData data = client.retrieveMpsData(ban.asStringValue());
 
@@ -30,7 +28,6 @@ class PortAdapter implements MpsPort {
   }
 
   private AddressBook toAddressBook(MpsData data) {
-    // TODO Auto-generated method stub
     return new AddressBook();
   }
 }
