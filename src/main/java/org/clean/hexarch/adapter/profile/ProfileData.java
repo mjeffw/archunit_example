@@ -11,7 +11,4 @@ class ProfileData {
   private String memberID;
   private String addressBookIndicator;
   private String primaryMemberIndicator;
-
-  // TODO REmove -- Not used
-  // private String transactionID;
 }

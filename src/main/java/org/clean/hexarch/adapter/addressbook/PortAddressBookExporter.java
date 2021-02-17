@@ -24,6 +24,8 @@ class PortAddressBookExporter implements AddressBookExporter {
     RequestVO requestVO = objFactoryForTypes.createRequestVO();
     requestVO.getActions().add(action);
     manageAddressBook.setRequestVO(requestVO);
+
+    throw new MyException();
   }
 
   public ManageAddressBook get() {

@@ -1,0 +1,3 @@
+#
+#Sat Jan 23 11:34:13 EST 2021
+no\ classes\ that\ not\ belong\ to\ any\ of\ [org.clean.hexarch.util.exception.ComponentException]\ should\ call\ code\ unit\ where\ target\ constructor\ and\ declared\ in\ assignable\ to\ java.lang.Throwable\ and\ not\ declared\ in\ assignable\ to\ org.clean.hexarch.util.exception.ComponentException,\ because\ all\ exceptions\ thrown\ by\ this\ code\ must\ inherit\ from\ ComponentException=18e47b8a-0683-4c5a-9688-20fd4212a69c

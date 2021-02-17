@@ -50,7 +50,6 @@ public class PortAdapter implements AddressBookPort {
   }
 
   private boolean isSuccess(String responseCode) {
-    // TODO change to match reality
     return "SUCCESS".equals(responseCode);
   }
 }

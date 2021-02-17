@@ -26,6 +26,8 @@ class PortAdapter implements MpsPort {
       return book;
     } catch (Exception e) {
       throw new ProfileServiceException();
+//       TODO throw GenericException
+//      throw new RuntimeException();
     }
   }
 

@@ -7,7 +7,7 @@ import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.library.GeneralCodingRules;
 
-class ApplicationTest extends Application {
+class ApplicationTest {
   private static final String PREFIX = "org.clean.hexarch";
   private static JavaClasses importedClasses;
 

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 public class SoapClientImpl implements SoapClient {
   @Override
   public ProfileData retrieveProfileData(String ban) {
-    // TODO Auto-generated method stub
     return null;
   }
 }
